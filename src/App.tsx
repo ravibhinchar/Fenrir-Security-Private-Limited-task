@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import { Login } from './components/Login/Login';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { Dashboard } from './components/Dashboard/Dashboard';
@@ -20,8 +21,8 @@ function App() {
   if (currentScreen === 'login') {
     return (
       <div className="app-container">
-        <button className="theme-toggle-btn" onClick={toggleTheme}>
-          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle Theme">
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
         </button>
         <Login onLogin={() => setCurrentScreen('dashboard')} />
       </div>
@@ -30,11 +31,8 @@ function App() {
 
   return (
     <div className="app-layout">
-      <Sidebar currentScreen={currentScreen} onNavigate={(screen) => setCurrentScreen(screen as any)} />
+      <Sidebar currentScreen={currentScreen} onNavigate={(screen) => setCurrentScreen(screen as any)} theme={theme} toggleTheme={toggleTheme} />
       <main className="main-content">
-        <button className="theme-toggle-btn" onClick={toggleTheme}>
-          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-        </button>
         {currentScreen === 'dashboard' && <Dashboard onNewScan={() => setCurrentScreen('scan')} />}
         {currentScreen === 'scan' && <ActiveScan onBack={() => setCurrentScreen('dashboard')} />}
       </main>
