@@ -103,3 +103,41 @@
     font-weight: 600;
     color: var(--text-primary);
 }
+
+/* mobile adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        padding: 1rem 0.5rem;
+    }
+
+    .sidebar-header {
+        justify-content: center;
+    }
+
+    .sidebar-header span {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+        padding: 0.75rem;
+        margin: 0;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .sidebar-divider {
+        display: none;
+    }
+
+    .sidebar-footer {
+        padding: 1rem 0.5rem;
+    }
+
+    .profile-details {
+        display: none;
+    }
+}

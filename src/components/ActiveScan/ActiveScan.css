@@ -299,6 +299,39 @@
     justify-content: space-between;
 }
 
+/* mobile breakpoints */
+@media (max-width: 768px) {
+    .scan-container {
+        padding: 1rem;
+    }
+
+    .progress-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .steps-container {
+        display: none;
+    }
+
+    .console-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .console-panel,
+    .findings-panel {
+        width: 100%;
+        height: auto;
+    }
+
+    .console-output {
+        font-size: 0.75rem;
+    }
+}
+
+
 .finding-desc {
     font-size: 0.75rem;
     color: var(--text-secondary);
