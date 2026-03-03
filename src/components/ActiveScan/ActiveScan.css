@@ -1,0 +1,305 @@
+.scan-container {
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.scan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scan-title-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.scan-title-area h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.scan-badge {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.btn-stop {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-stop:hover {
+    background-color: #dc2626;
+}
+
+.progress-section {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    align-items: center;
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.circular-bg {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 8;
+}
+
+.circular-bar {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 8;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 70;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-percent {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.steps-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.steps-line {
+    position: absolute;
+    top: 24px;
+    left: 30px;
+    right: 30px;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+.steps-line-active {
+    position: absolute;
+    top: 24px;
+    left: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+    z-index: 0;
+    width: 50%;
+    transition: width 0.5s ease;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    width: 80px;
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.step-completed .step-icon {
+    background-color: var(--success);
+    color: white;
+    border: 2px solid var(--success);
+}
+
+.step-active .step-icon {
+    background-color: var(--accent-color);
+    color: white;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.step-pending .step-icon {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+}
+
+.step-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.step-active .step-label,
+.step-completed .step-label {
+    color: var(--text-primary);
+}
+
+.console-section {
+    display: flex;
+    gap: 1.5rem;
+    height: 400px;
+}
+
+.console-panel {
+    flex: 2;
+    background-color: #0f172a;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.console-tabs {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.console-tab {
+    padding: 0.75rem 1.5rem;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.console-tab.active {
+    color: #f8fafc;
+    border-bottom-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.console-output {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+}
+
+.log-line {
+    margin-bottom: 0.25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.log-time {
+    color: #64748b;
+    user-select: none;
+}
+
+.log-info {
+    color: #60a5fa;
+}
+
+.log-warn {
+    color: #fbd38d;
+}
+
+.log-error {
+    color: #f87171;
+}
+
+.findings-panel {
+    flex: 1;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.findings-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.findings-list {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+}
+
+.finding-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.finding-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.finding-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
